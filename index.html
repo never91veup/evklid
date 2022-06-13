@@ -111,20 +111,20 @@
           <div class="working__steps-container">
             <ul class="working__steps-list">
               <li class="working__steps-item">
-                <a href="#" class="working__steps-link">1 шаг</a>
+                <a class="working__steps-link" data-path="one">1 шаг</a>
               </li>
               <li class="working__steps-item">
-                <a href="#" class="working__steps-link">2 шаг</a>
+                <a class="working__steps-link" data-path="two">2 шаг</a>
               </li>
               <li class="working__steps-item">
-                <a href="#" class="working__steps-link">3 шаг</a>
+                <a class="working__steps-link" data-path="three">3 шаг</a>
               </li>
               <li class="working__steps-item">
-                <a href="#" class="working__steps-link">4 шаг</a>
+                <a class="working__steps-link" data-path="four">4 шаг</a>
               </li>
             </ul>
           </div>
-          <div class="working__content">
+          <div class="working__content tab-content-active" data-target="one">
             <div class="working__col info">
               <strong class="working__header">
                 Проводим консультацию
@@ -136,7 +136,52 @@
               <button class="working__btn btn-doc btn-reset">Договор</button>
             </div>
             <div class="working__col image">
-              <div class="working__banner"></div>
+              <div class="working__banner working__banner--1"></div>
+            </div>
+          </div>
+          <div class="working__content" data-target="two">
+            <div class="working__col info">
+              <strong class="working__header">
+                Состовляем смету
+              </strong>
+              <p class="working__descr">
+                Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+              </p>
+              <button class="working__btn btn btn-reset">Подробнее</button>
+              <button class="working__btn btn-doc btn-reset">Договор</button>
+            </div>
+            <div class="working__col image">
+              <div class="working__banner working__banner--2"></div>
+            </div>
+          </div>
+          <div class="working__content" data-target="three">
+            <div class="working__col info">
+              <strong class="working__header">
+                Привлекаем подрядчиков
+              </strong>
+              <p class="working__descr">
+                Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.
+              </p>
+              <button class="working__btn btn btn-reset">Подробнее</button>
+              <button class="working__btn btn-doc btn-reset">Договор</button>
+            </div>
+            <div class="working__col image">
+              <div class="working__banner working__banner--3"></div>
+            </div>
+          </div>
+          <div class="working__content" data-target="four">
+            <div class="working__col info">
+              <strong class="working__header">
+                Инспектируем все этапы работ
+              </strong>
+              <p class="working__descr">
+                Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
+              </p>
+              <button class="working__btn btn btn-reset">Подробнее</button>
+              <button class="working__btn btn-doc btn-reset">Договор</button>
+            </div>
+            <div class="working__col image">
+              <div class="working__banner working__banner--4"></div>
             </div>
           </div>
         </div>
@@ -227,5 +272,7 @@
       </div>
     </footer>
   </div>
+
+  <script src="../evklid/js/tabs.js"></script>
 </body>
 </html>

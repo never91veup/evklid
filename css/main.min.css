@@ -873,6 +873,7 @@ section {
 }
 
 .working__steps-link {
+  cursor: pointer;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
@@ -900,6 +901,7 @@ section {
 .working__content {
   display: flex;
   justify-content: space-between;
+  display: none;
 }
 
 .working__col {
@@ -913,6 +915,10 @@ section {
   font-size: 24px;
   line-height: 32px;
   color: var(--text-color);
+}
+
+.tab-content-active {
+  display: flex;
 }
 
 .working__descr {
@@ -965,7 +971,22 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.working__banner--1 {
   background-image: url("../img/working1.jpg");
+}
+
+.working__banner--2 {
+  background-image: url("../img/working2.jpg");
+}
+
+.working__banner--3 {
+  background-image: url("../img/working3.jpg");
+}
+
+.working__banner--4 {
+  background-image: url("../img/working4.jpg");
 }
 
 /* Accordion */
@@ -1666,10 +1687,6 @@ section {
   .footer {
     padding-bottom: 0;
   }
-}
-
-@media (max-width: 320px) {
-
 }
 
   /*# sourceMappingURL=main.min.css.map */
