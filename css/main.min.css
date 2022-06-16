@@ -545,13 +545,13 @@ section {
 .menu {
   position: absolute;
   z-index: 10;
-  top: 200px;
+  top: 226px;
   bottom: 0;
   right: 0;
   width: 150px;
   height: 220px;
   padding-left: 30px;
-  background-color: rgba(255, 153, 0,0.5);
+  background-color: rgba(89, 160, 201, 0.75);
   transition: transform .3s ease-in-out;
   transform: translateX(101%);
 }
@@ -580,7 +580,7 @@ section {
   justify-content: space-between;
   align-items: center;
   height: 106px;
-  background: rgba(34, 34, 34,0.75);
+  background: rgba(67, 117, 146, 0.75);
 }
 
 .logo {
@@ -1153,6 +1153,9 @@ section {
 }
 
 .accordion__header {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
