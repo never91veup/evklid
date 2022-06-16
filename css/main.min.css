@@ -1097,17 +1097,11 @@ section {
   position: relative;
   padding: 39px 0;
   cursor: pointer;
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 32px;
-  color: var(--text-color);
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
 }
 
-.accordion__item::after {
+.accordion__header::after {
   content: "";
   position: absolute;
   right: 0;
@@ -1121,6 +1115,13 @@ section {
   background-position: center;
 }
 
+.accordion__header:hover,
+.accordion__header:focus {
+  outline: none;
+  color: #FF9900;
+}
+
+
 .accordion__item:hover,
 .accordion__item:focus {
   outline: none;
@@ -1129,22 +1130,45 @@ section {
   border-bottom: 1px solid #FF9900;
 }
 
-.accordion__item:hover::after,
-.accordion__item:focus::after {
+.accordion__header:hover::after,
+.accordion__header:focus::after {
   outline: none;
   background-image: url("../img/x-hover.png");
 }
 
-.accordion__item:active {
+.accordion__header:active {
   outline: none;
   color: var(--text-color);
+}
+
+.accordion__item:active {
+  outline: none;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
 }
 
-.accordion__item:active::after {
+.accordion__header:active::after {
   outline: none;
   background-image: url("../img/x-active.png");
+}
+
+.accordion__header {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--text-color);
+}
+
+.accordion__content {
+  margin-top: 30px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  color: #333333;
 }
 
 
