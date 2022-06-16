@@ -8,6 +8,46 @@
   <meta name="theme-color" content="#111111">
   <title>Evklid: building</title>
   <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  </script> -->
+  <script>
+    $(document).ready(function () {
+      // Добавить плавную прокрутку до всех ссылок
+      $("a").on("click", function (event) {
+        // Убедись в этом что .hash имеет значение перед переопределением поведения по умолчанию
+        if (this.hash !== "") {
+          // Запретить поведение щелчка якоря по умолчанию
+          event.preventDefault();
+
+          // Хранить хэш
+          var hash = this.hash;
+
+          // Использование метода animate() jQuery для добавления плавной прокрутки страницы
+          // Необязательное число (800) указывает количество миллисекунд, необходимых для прокрутки до указанной области
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              // Добавить хэш (#) для URL-адреса после завершения прокрутки (поведение щелчка по умолчанию)
+              window.location.hash = hash;
+            }
+          );
+        } // Конец, если
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="site-container">
@@ -23,16 +63,23 @@
         </a>
         <nav class="header__left nav">
           <ul class="nav__list">
-            <li class="nav__item"><a href class="nav__link">О нас</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">О нас</a></li>
             <li class="nav__item"><a href class="nav__link">Проекты</a></li>
-            <li class="nav__item"><a href class="nav__link">Этапы</a></li>
-            <li class="nav__item"><a href class="nav__link">Отзывы</a></li>
-            <li class="nav__item"><a href class="nav__link">Контакты</a></li>
+            <li class="nav__item"><a href="#working" class="nav__link">Этапы</a></li>
+            <li class="nav__item"><a href="#accordion" class="nav__link">Отзывы</a></li>
+            <li class="nav__item"><a href="#footer" class="nav__link">Контакты</a></li>
           </ul>
           <button class="btn-reset header__search"></button>
-          <button class="btn-reset burger">
-            <span class="burger__line"></span>
-          </button>
+            <button class="btn-reset burger" id="burger"></button>
+            <div class="menu" id="menu">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="#about" class="menu__link">О нас</a></li>
+                <li class="menu__item"><a href class="menu__link">Проекты</a></li>
+                <li class="menu__item"><a href="#working" class="menu__link">Этапы</a></li>
+                <li class="menu__item"><a href="#accordion" class="menu__link">Отзывы</a></li>
+                <li class="menu__item"><a href="#footer" class="menu__link">Контакты</a></li>
+              </ul>
+            </div>
         </nav>
       </div>
     </header>
@@ -41,9 +88,23 @@
     <main class="main">
 
       <section class="hero">
-        <div class="container hero__container">
-          <div class="hero__banner banner">
-            <div class="banner__slide banner__slide--1">
+        <div class="container hero__container ">
+          <div class="hero__banner banner swiper">
+            <div class="swiper-wrapper">
+              <div class="banner__slide banner__slide--1 swiper-slide">
+                <img class="banner-size" src="img/banner.jpg" alt="" />
+              </div>
+              <div class="banner__slide banner__slide--2 swiper-slide">
+                <img class="banner-size" src="img/banner-2.jpg" alt="" />
+              </div>
+              <div class="banner__slide banner__slide--3 swiper-slide">
+                <img class="banner-size" src="img/banner-3.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="hero__slide-text">
               <h1 class="hero__title">Проектные решения любой сложности</h1>
               <p class="hero__descr">
                 Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
@@ -56,7 +117,7 @@
 
       <section class="about">
         <div class="container about__container">
-          <h2 class="about__title title">О нас</h2>
+          <h2 class="about__title title" id="about">О нас</h2>
           <p class="about__descr">Также как перспективное планирование создаёт необходимость включения в производственный план целого ряда внеочередных мероприятий с учётом комплекса экспериментов, поражающих по своей масштабности и грандиозности. А также диаграммы связей могут быть описаны максимально подробно. Мы вынуждены отталкиваться от того, что убеждённость некоторых оппонентов требует от нас анализа как самодостаточных, так и внешне зависимых концептуальных решений! Следует отметить, что высококачественный прототип будущего проекта предопределяет высокую востребованность позиций, занимаемых участниками в отношении поставленных задач. Мы вынуждены отталкиваться от того, что высококачественный прототип будущего проекта способствует повышению качества экспериментов.</p>
           <div class="about__content">
             <div class="about__col">
@@ -107,7 +168,7 @@
 
       <section class="working">
         <div class="container working__container">
-          <h2 class="working__title title">Как мы работаем</h2>
+          <h2 class="working__title title" id="working">Как мы работаем</h2>
           <div class="working__steps-container">
             <ul class="working__steps-list">
               <li class="working__steps-item">
@@ -189,7 +250,7 @@
 
       <section class="according">
         <div class="container accordion__container">
-          <h2 class="accordion__title title">Часто задаваемые вопросы</h2>
+          <h2 class="accordion__title title" id="accordion">Часто задаваемые вопросы</h2>
           <ul class="accordion__list">
             <li class="accordion__item">
               Из чего формируется конечная стоимость проекта?
@@ -210,7 +271,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container footer__container">
         <ul class="footer__list">
           <li class="footer__left">
@@ -273,6 +334,29 @@
     </footer>
   </div>
 
-  <script src="../evklid/js/tabs.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        hide: "true",
+      },
+    });
+  </script>
 </body>
 </html>
